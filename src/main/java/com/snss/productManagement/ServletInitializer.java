@@ -1,4 +1,4 @@
-package com.snss.ProductManagement;
+package com.snss.productManagement;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
