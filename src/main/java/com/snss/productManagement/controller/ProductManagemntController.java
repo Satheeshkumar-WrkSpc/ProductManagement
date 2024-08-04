@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.snss.productManagement.entity.ProductEntity;
+import com.snss.productManagement.entity.Product;
 import com.snss.productManagement.service.ProductManagementService;
 
 @RestController
@@ -19,7 +19,7 @@ public class ProductManagemntController {
 	private ProductManagementService productManagementService;
 	
 	@GetMapping("/list")
-	public List<ProductEntity> productList() {
+	public List<Product> productList() {
 		return productManagementService.getAllProducts();
 	}
 	
