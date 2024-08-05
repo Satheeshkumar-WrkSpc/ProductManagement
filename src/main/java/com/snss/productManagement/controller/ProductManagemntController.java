@@ -4,11 +4,13 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.snss.productManagement.entity.Product;
+import com.snss.productManagement.entity.productDataSource.Product;
 import com.snss.productManagement.service.ProductManagementService;
 
 @RestController
@@ -24,20 +26,24 @@ public class ProductManagemntController {
 	}
 	
 	@PostMapping("/register")
-	public String registerProduct() {
+	public Product registerProduct(@RequestBody Product product) {
 		
-		return "Success";
+		System.out.println("Register product :: " + product.getProductName());
+		return productManagementService.saveProduct(product);
 	}
 	
 	@PostMapping("/update")
-	public String editProduct() {
+	public Product editProduct(@RequestBody Product product) {
 		
-		return "Edit Product";
+		System.out.println("Update request reached the controller");
+		return productManagementService.updateProduct(product);
 	}
 	
-	@PostMapping("/delete")
-	public String deleteProduct() {
+	@PostMapping("/delete/{productId}")
+	public String deleteProduct(@PathVariable Long productId) {
 		
-		return "Edit Product";
+		System.out.println("Delete request reached the controller" + productId);
+		return "Product deleted successfully";
 	}
+	
 }

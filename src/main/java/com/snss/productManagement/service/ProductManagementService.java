@@ -2,25 +2,15 @@ package com.snss.productManagement.service;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import com.snss.productManagement.entity.productDataSource.Product;
 
-import com.snss.productManagement.entity.Product;
-import com.snss.productManagement.repository.ProductRepository;
+public interface ProductManagementService {
 
-@Service
-public class ProductManagementService {
-
-	@Autowired
-	private ProductRepository productRepository;
-
-	public List<Product> getAllProducts() {
-
-		return productRepository.findAll();
-	}
-
-	public Product saveUser(Product productEntity) {
-		
-		return productRepository.save(productEntity);
-	}
+	public List<Product> getAllProducts();
+	
+	public Product saveProduct(Product product);
+	
+	public Product updateProduct(Product product);
+	
+	public void deleteProduct(Product product);
 }
