@@ -2,6 +2,7 @@ package com.snss.productManagement.entity.productDataSource;
 
 import java.time.LocalDate;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -20,20 +21,28 @@ public class Product {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="product_id")
 	private Long productId;
 	
+	@Column(name="product_name")
 	private String productName;
 	
+	@Column(name="product_description")
 	private String productDescription;
 	
+	@Column(name="registration_date")
 	private LocalDate registrationDate;
 	
+	@Column(name="created_by")
 	private String createdBy;
 	
+	@Column(name="created_date")
 	private LocalDate createdDate;
 	
+	@Column(name="updated_by")
     private String updatedBy;
 	
+	@Column(name="updated_date")
 	private LocalDate updatedDate;
 	
 	public Long getProductId() {

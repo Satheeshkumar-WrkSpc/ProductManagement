@@ -1,8 +1,8 @@
-package com.snss.productManagement.dto;
+package com.snss.productManagement.model.product;
 
 import java.time.LocalDate;
 
-public class ProductDTO {
+public class ProductModel {
 
 	private Long productId;
 	

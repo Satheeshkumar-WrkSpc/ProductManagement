@@ -1,4 +1,4 @@
-package com.snss.productManagement.repository;
+package com.snss.productManagement.productRepo;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

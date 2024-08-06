@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.snss.productManagement.entity.productDataSource.Product;
-import com.snss.productManagement.repository.ProductRepository;
+import com.snss.productManagement.productRepo.ProductRepository;
 
 @Service
 public class ProductManagementServiceImpl implements  ProductManagementService {
